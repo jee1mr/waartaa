@@ -309,7 +309,7 @@ Meteor.publish('channel_nick_suggestions',
       {
         server_name: server_name,
         channel_name: channel_name,
-        nick: {$regex: '^' + pattern + '.+'},
+        nick: {$regex: '^' + pattern + '.+', $options: 'i'},
       },
       {
         fields: {last_upated: 0, created: 0},

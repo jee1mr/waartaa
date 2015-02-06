@@ -139,7 +139,7 @@ function _getMatchingNicks (term) {
     return;
   ChannelNickSugesstions.find(
     {
-      nick: {$regex: '^' + term + '.+'},
+      nick: {$regex: '^' + term + '.+', $options: 'i'},
       channel_name: channel.name,
       server_name: channel.user_server_name
     },
